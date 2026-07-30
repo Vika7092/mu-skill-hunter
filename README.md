@@ -24,7 +24,7 @@
 - 📊 **"What's trending this week?"** — Generates a weekly report of top 8 trending skills with unified scoring (heat 50% + relevance 30% + freshness 20%)
 - 📦 **"Search ClawHub for MCP tools"** — Source-specific search with parallel `clawhub inspect` calls for download counts and summaries
 - 🐉 **"Find skills on SkillHub (CN)"** — Queries the Tencent SkillHub public API for China-accelerated, compliant skill discovery
-- ⏰ **"Set up weekly auto-report"** — Cron-driven weekly report pushed to WeChat/Feishu with curated top 8 + backup picks
+- ⏰ **"Set up weekly auto-report"** — Scheduled recurring report with curated top 8 picks, delivered to your preferred messaging platform at your chosen frequency
 - 🧹 **"Find newly created agent skills on GitHub"** — Tracks repos created in the past week, surfaces fresh projects before they go mainstream
 - ✅ **"Install this skill safely"** — Staging area isolation + scanner.py audit + risk-gated install command output
 
@@ -32,7 +32,7 @@
 
 ### ✨ Core Highlights
 
-#### 🌐 Four-Source Discovery (80+ Results per Search)
+#### 🌐 Four-Source Discovery
 
 | Source | API Type | Auth Required | Strength |
 |--------|----------|---------------|----------|
@@ -41,7 +41,7 @@
 | SkillHub | HTTP API + CLI | None (public) | China-accelerated, Tencent-backed, CN-friendly |
 | Skills.sh | CLI (npx) | None | Install-count visibility, emerging ecosystem |
 
-The search engine queries all 4 sources in parallel, deduplicates results, and presents them in a unified table format with source labels (🐙GitHub / 🦀ClawHub / 🐉SkillHub / 🛠️Skills.sh).
+The search engine queries all 4 sources in parallel based on your keywords, deduplicates results, and presents them in a unified ranked format with source labels (🐙GitHub / 🦀ClawHub / 🐉SkillHub / 🛠️Skills.sh).
 
 #### 🛡️ 12-Rule Security Scanner
 
@@ -65,13 +65,14 @@ Score = Heat (50%) + Relevance (30%) + Freshness (20%)
 
 Forced mixing in weekly reports: ≥4 GitHub + ≥2 ClawHub + ≥1 SkillHub + ≥1 Skills.sh (when available).
 
-#### 📨 Weekly Report with Cron Automation
+#### 📨 Scheduled Trend Reports
 
 - Top 8 curated picks + backup section
 - Source-forced diversity (no single-source dominance)
 - Deduplication: ClawHub by slug, GitHub same-owner ≤2
-- Auto-pushed to WeChat/Feishu with "(auto)" tag in title
+- Auto-delivered to your preferred messaging platform
 - User scene profiling for personalized recommendations
+- Schedule frequency is fully customizable — weekly, bi-weekly, or any interval that fits your workflow.
 
 ---
 
@@ -82,7 +83,7 @@ Forced mixing in weekly reports: ≥4 GitHub + ≥2 ClawHub + ≥1 SkillHub + �
 | Sources | 4 (GitHub + ClawHub + SkillHub + Skills.sh) | 1 (GitHub) | 1 (ClawHub) | 1 (Skills.sh) |
 | Security scan | 12-rule static analysis | None | None | None |
 | Unified scoring | Heat + Relevance + Freshness | None | None | None |
-| Weekly report | Auto Cron + curated top 8 | Manual | None | None |
+| Weekly report | Auto + curated top 8 | Manual | None | None |
 | Parallel search | All sources simultaneously | Sequential | Single source | Single source |
 | Download counts | ClawHub inspect + SkillHub API | N/A | Yes | Yes |
 | China acceleration | SkillHub (Tencent) | No | No | No |
@@ -97,7 +98,7 @@ Forced mixing in weekly reports: ≥4 GitHub + ≥2 ClawHub + ≥1 SkillHub + �
 |----------|----------|---------|
 | 🔍 Search Discovery | "Find a skill that can do X" | User describes a need or says "find skill" |
 | 🛡️ Security Audit | "Audit/install this skill" | User ready to install an external skill |
-| 📊 Weekly Report | Weekly trending digest | Cron (Sun 18:00) or manual `trending.py --period weekly` |
+| 📊 Weekly Report | Weekly trending digest | Scheduled (customizable) or manual `trending.py --period weekly` |
 
 ---
 
