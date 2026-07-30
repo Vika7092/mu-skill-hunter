@@ -2,7 +2,7 @@
   <img alt="mu-skill-hunter" src="assets/default-banner.png" width="100%">
 </p>
 
-# 🔍 mu-skill-hunter · Skill Hunter Weekly
+# 🔍 mu-skill-hunter · Skill Hunter
 
 > Discover, audit, and track AI agent skills across 4 sources — GitHub, ClawHub, SkillHub, and Skills.sh — with automated security scanning and weekly trending reports.
 

@@ -2,7 +2,7 @@
   <img alt="mu-skill-hunter" src="assets/default-banner.png" width="100%">
 </p>
 
-# 🔍 mu-skill-hunter · Skill猎手周报
+# 🔍 mu-skill-hunter · Skill严选猎手
 
 > 四源发现、安全审查、周报推送——GitHub / ClawHub / SkillHub / Skills.sh 一站式 Skill 搜索工具，12 条安全规则 + 统一评分算法 + Cron 自动周报。
 
