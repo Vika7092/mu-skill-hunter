@@ -102,7 +102,7 @@ python3 ./scripts/scanner.py \
 
 ---
 
-## Phase 3：Skill 猎手周报（Cron 自动）
+## Phase 3：Skill 严选猎手（Cron 自动）
 
 **入口条件**：每周日 18:00 Cron 触发（首次使用由 Cron 建立引导完成）
 
