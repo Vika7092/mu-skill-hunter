@@ -21,7 +21,7 @@
 
 - 🔍 **"Find a skill that can fill PDF forms"** — Searches all 4 sources simultaneously, returns ranked results with descriptions, links, and popularity metrics
 - 🛡️ **"Audit this skill before I install it"** — Downloads to a sandboxed staging area, runs 12-rule static security scan, reports risk level (LOW/MEDIUM/HIGH/EXTREME)
-- 📊 **"What's trending this week?"** — Generates a weekly report of top 8 trending skills with unified scoring (heat 50% + relevance 30% + freshness 20%)
+- 📊 **"What's trending this week?"** — Generates a weekly report of top 8 curated skills using a three-signal selection model (heat 50% + relevance 30% + freshness 20%)
 - 📦 **"Search ClawHub for MCP tools"** — Source-specific search with parallel `clawhub inspect` calls for download counts and summaries
 - 🐉 **"Find skills on SkillHub (CN)"** — Queries the Tencent SkillHub public API for China-accelerated, compliant skill discovery
 - ⏰ **"Set up weekly auto-report"** — Scheduled recurring report with curated top 8 picks, delivered to your preferred messaging platform at your chosen frequency
@@ -53,10 +53,10 @@ Every external skill is scanned before installation using `scanner.py` with:
 
 Scanner outputs **summaries only** (rule_id, file, line number) — never raw code — to prevent prompt injection through scanned content.
 
-#### 📊 Unified Scoring Algorithm
+#### 📊 Three-Signal Curation Model
 
 ```
-Score = Heat (50%) + Relevance (30%) + Freshness (20%)
+Curation basis = Heat (50%) + Relevance (30%) + Freshness (20%)
 ```
 
 - **Heat**: Log-normalized stars/downloads across all results
@@ -82,7 +82,7 @@ Forced mixing in weekly reports: ≥4 GitHub + ≥2 ClawHub + ≥1 SkillHub + �
 |---------|----------------|---------------------|-------------------|----------------|
 | Sources | 4 (GitHub + ClawHub + SkillHub + Skills.sh) | 1 (GitHub) | 1 (ClawHub) | 1 (Skills.sh) |
 | Security scan | 12-rule static analysis | None | None | None |
-| Unified scoring | Heat + Relevance + Freshness | None | None | None |
+| Three-signal curation | Heat + Relevance + Freshness | None | None | None |
 | Weekly report | Auto + curated top 8 | Manual | None | None |
 | Parallel search | All sources simultaneously | Sequential | Single source | Single source |
 | Download counts | ClawHub inspect + SkillHub API | N/A | Yes | Yes |
@@ -113,7 +113,7 @@ Forced mixing in weekly reports: ≥4 GitHub + ≥2 ClawHub + ≥1 SkillHub + �
 | SkillHub API | Public HTTP, no auth required |
 | Output formats | Human-readable table (default) or JSON (`--json` flag) |
 | Security scanner | 12 rules (10 Hard Reject + 2 AI-specific) + 4 Yellow Flags |
-| Scoring | Heat 50% + Relevance 30% + Freshness 20%, 0-100 scale |
+| Curation model | Heat 50% + Relevance 30% + Freshness 20%, three-signal ranking |
 | Platform | macOS / Linux / Windows (Python 3.8+) |
 | Package size | ~50KB (3 Python scripts + 3 reference docs) |
 
@@ -161,7 +161,7 @@ If mu-skill-hunter helps you discover great skills, please consider giving it a 
 
 [![Star History Chart](https://api.star-history.com/svg?repos=muippt/mu-skill-hunter&type=Date)](https://star-history.com/#muippt/mu-skill-hunter&Date)
 
-> Discover, audit, and install AI agent skills with confidence — 4 sources, 12 security rules, 1 unified score.
+> Discover, audit, and install AI agent skills with confidence — 4 sources, 12 security rules, 1 curated selection model.
 
 ---
 

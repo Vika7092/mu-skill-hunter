@@ -124,7 +124,7 @@ python3 ./scripts/trending.py --period weekly
 **周报内容 & 格式**：
 详见 `references/weekly-report-template.md`，核心规则：
 - 精选8个 + 备选区，GitHub 和 ClawHub 强制混排
-- 统一评分：热度50% + 相关性30% + 新鲜度20%
+- 三维严选：热度50% + 相关性30% + 新鲜度20%
 - 名称即超链接，描述≤80字，来源标签区分🐙GitHub/🦀ClawHub
 - 项目间用盲文空格 `⠀`(U+2800) 占位行强制分隔（消息卡片只认双换行）
 - 去重：ClawHub按slug + GitHub同作者≤2
